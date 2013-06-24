@@ -13,7 +13,6 @@ public class Test1 {
 	public void t1(){
 		System.out.println("1");
 		createAndStoreEvent("My Event", new Date());
-		HibernateUtil.getSessionFactory().close();
 	}
 	
 	
@@ -28,5 +27,6 @@ public class Test1 {
         session.save(theEvent);
 
         session.getTransaction().commit();
+        HibernateUtil.getSessionFactory().close();
     }
 }
