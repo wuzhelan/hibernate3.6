@@ -7,14 +7,20 @@
 
 	<session-factory>
 
-		<!-- Database connection settings -->
+		<!-- Database connection settings 
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/test</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">123123</property>
+		-->
 
-		<!-- JDBC connection pool (use the built-in) -->
+		<!-- JDBC connection pool (use the built-in) 
 		<property name="connection.pool_size">1</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		-->
 
 		<!-- SQL dialect -->
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
@@ -31,6 +37,6 @@
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
 		<mapping resource="Event.hbm.xml" />
-		<mapping resource="Person.hbm.xml" />
+		<mapping resource="Person.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
