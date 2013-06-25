@@ -38,5 +38,6 @@
 		<property name="hbm2ddl.auto">update</property>
 		<mapping resource="Event.hbm.xml" />
 		<mapping resource="Person.hbm.xml"/>
+		<mapping class="com.h.domain.Cat"/>
 	</session-factory>
 </hibernate-configuration>

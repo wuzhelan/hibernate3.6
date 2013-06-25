@@ -4,6 +4,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.junit.Test;
 
+import com.h.domain.Cat;
 import com.h.domain.Event;
 import com.h.domain.Person;
 import com.h.util.HibernateUtil;
@@ -35,6 +36,10 @@ public class Test1 {
 	        p.setFirstname("a");
 	        p.setLastname("b");
 	        session.persist(p);
+	        
+	        Cat c = new Cat();
+	        c.setBirthdate(new Date());
+	        session.persist(c);
 	        session.getTransaction().commit();
 	        HibernateUtil.getSessionFactory().close();
 	}
